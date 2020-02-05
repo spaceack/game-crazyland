@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+<body>
+
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">军情播报</div>
+
+            <!-- Table -->
+            <table class="table table-striped">
+                {% for new in news %}
+                <tbody>
+                <td>{{ new.crate_at }}</td>
+                <td>{{ new.content }}</td>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">游戏攻略</div>
+
+            <!-- Table -->
+            <table class="table table-striped">
+                {% for new in news %}
+                <tbody>
+                <td>{{ new.crate_at }}</td>
+                <td>{{ new.content }}</td>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">开发日志</div>
+
+            <!-- Table -->
+            <table class="table table-striped">
+                {% for new in news %}
+                <tbody>
+                <td>{{ new.crate_at }}</td>
+                <td>{{ new.content }}</td>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">问题指南</div>
+
+            <!-- Table -->
+            <table class="table table-striped">
+                {% for new in news %}
+                <tbody>
+                <td>{{ new.crate_at }}</td>
+                <td>{{ new.content }}</td>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+</body>
+</html>

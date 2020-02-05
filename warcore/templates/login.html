@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>登录</h2>
+{% if message %}
+<div class="f"> {{ message }}</div>
+{% endif %}
+<style>
+    .f {
+        color: red;
+    }
+</style>
+<body class="text-center">
+<div class="form-wrapper">
+     
+    <div class="middle">
+        <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+                 {% csrf_token %}
+                 {% for field in form %}
+
+            <div class="fieldWrapper">{{ field.errors }}
+                <div class="form-group">
+                    <div class="col-sm-4">{{ field.label_tag }}</div>
+                    <div class="col-sm-8">
+                        {{ field }}
+                    </div>
+                </div>
+                       {% if field.help_text %}
+                            <p class="help">{{ field.help_text|safe }}</p>
+                       {% endif %}
+            </div>
+                   {% endfor %}
+
+            <div class="button-wrapper submit">
+                        <input type="submit" value="登录"/>     
+            </div>
+             
+        </form>
+    </div>
+</div>
+</body>
+{% endblock %}
+<!--ajax刷新验证码-->
+<script>
+    $('.captcha').click(function () {
+        $.getJSON("/captcha/refresh/", function (result) {
+            $('.captcha').attr('src', result['image_url']);
+            $('#id_captcha_0').val(result['key'])
+        });
+
+    });
+</script>

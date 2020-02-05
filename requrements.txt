@@ -8,6 +8,11 @@
 --trusted-host pypi.douban.com
 
 asgiref==3.2.3            # via django
+django-ranged-response==0.2.0  # via django-simple-captcha
+django-simple-captcha==0.5.12
+django-widget-tweaks==1.4.5
 django==3.0.2
+pillow==7.0.0             # via django-simple-captcha
 pytz==2019.3              # via django
+six==1.14.0               # via django-simple-captcha
 sqlparse==0.3.0           # via django
