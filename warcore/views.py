@@ -15,12 +15,14 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
+
 def index(request):
     l = News.objects.all()
     print(l)
     return render(request, 'index.html', {"news":l})
 
-
+def world(request):
+    return render(request, 'world.html', {})
 
 def register(request):
     '帐号注册'

@@ -29,6 +29,10 @@ class World(models.Model):
     class Meta:
         verbose_name = '世界表'
 
+# 地图表
+class WorldMap(models.Model):
+    base_id = models.BigIntegerField()
+    type = models.CharField(max_length=16)
 
 # App表
 class App(models.Model):
@@ -119,6 +123,7 @@ class News(models.Model):
     status = models.IntegerField('状态', default=1)
     crate_at = models.DateTimeField(auto_now=True)
     update_at = models.DateTimeField(auto_now=True)
+    objects = models.Manager()
 
     class Meta:
         verbose_name = '新闻'

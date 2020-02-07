@@ -47,10 +47,10 @@
 </script>
 
 <script>
-    {% if message and code is 1 %}
-        alert('{{ message }}');
-        window.location.href = '/accounts/login';
-    {% else %}
-        alert('{{ message }}');
-    {% endif %}
-</script>
+{% if message and code is 1%}
+    alert('{{ message }}');
+     window.location.href='/accounts/login';
+{% else %}
+    alert('{{ message }}');
+{% endif %}
+ </script>
