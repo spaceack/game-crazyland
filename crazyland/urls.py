@@ -27,7 +27,6 @@ urlpatterns = [
     path(r'register',register, name='register'),
     path(r'login', login, name='login'),
     path(r'loginout', loginout, name='loginout'),
-    path(r'captcha/', include('captcha.urls')),
     path(r'world', world),
     re_path(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
 ]
